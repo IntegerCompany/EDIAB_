@@ -5,12 +5,18 @@ public class Post{
     
     var date:String! //for example string , but we neet to change it to normal date format
     var tag:[String]! //some tag const.
+    var name:String!
 }
 
 public class EventPost:Post{
     
     public override init(){
         super.init()
+        
+        var description:String!
+        var company:[Company]!
+        var photos:[Img]!
+        var videos:[String]!
         
     }
     public var description:String!
@@ -19,6 +25,14 @@ public class EventPost:Post{
 public class StoryPost:Post{
     public override init(){
         super.init()
+        
+        var descriptionShort:String!
+        var descriptionLong:String!
+        var photos:[Img]!
+        var videos:[String]!
+        var companyId:Int!
+        
+        //generate new fields
     }
     
 }
@@ -27,11 +41,11 @@ public class ProductPost:Post{
     public override init(){
         super.init()
     }
-    var name:String!
     var price:Float!
     var posibleConfiguration:[String]! // need more deatails abut this field
     var category:String! //// need more deatails abut this field
     var photos:[String]! // Galery - array of image ids
+    var videos:[String]!
     //var tag:[String]! //some tag const.
     var files:[String]! // array of files ids
     public var description:String!
@@ -81,7 +95,7 @@ public class RealEstatePost:Post{
     var numberOfFlours:Int! // flour count
     var flour:Int! // current
     //var tag:[String]! //some tag const.
-    var name:String!
+    //var name:String!
     var description:String!
     var comments:[Int]! // easy for u!
     var areaOfCity:String!

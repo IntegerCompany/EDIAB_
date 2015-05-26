@@ -9,6 +9,13 @@ public class UserProfilePage{
     //I have used this method as entry point of this page
     public func pageDidLoad(){
         
+        performUserPostList()//as default
+        loadUserInfo()
+        
+    }
+    private func loadUserInfo(){
+        //perform user photo
+        //perform user name and loacation
     }
     private func performUserPostList(){
 
@@ -68,6 +75,4 @@ public class UserProfilePage{
     /*
     * ... modify next show method depending on the goals
     */
-    private func 
-
-}
+    }
