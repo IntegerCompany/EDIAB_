@@ -6,7 +6,9 @@ public class Img{
 public class Company : Post{
     
     var address:String!
-    var contacts:String!
+    var phones:[Int]!
+    var skype:String!
+    var email:String!
     var logo:Img!//(optionally)
     //var tag:[String] = [] //some const. tag
     var video:Int! //(optionally) id from db

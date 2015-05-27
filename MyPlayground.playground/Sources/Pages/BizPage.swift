@@ -20,6 +20,10 @@ public class BusinessPage{
     public init(_id:Int){
         self.companyID = _id
     }
+    //constructor with companyParams
+    public init(company:Company){
+        self.curentCompany = company
+    }
     
     // As entry point of this page
     public func pageDidLoad(){
@@ -50,8 +54,9 @@ public class BusinessPage{
     */
     public func initCurrentCompany(){
         self.dbHelper = DataBaseHelper()
-        self.curentCompany = dbHelper.getCurrentCompanyById(companyID)
-        
+        if self.curentCompany == nil {
+            self.curentCompany = dbHelper.getCurrentCompanyById(companyID)
+        }
         //is this company owner ?
         if getCurrentUser().getId() == curentCompany.ownerId {
             showControllButtons()
@@ -74,6 +79,8 @@ public class BusinessPage{
     }
     public func showControllButtons(){
         //show editButton:
+        //show addNewParnerButton:
+        //show deletePartnerButton: actually i`m not sure how to implement this functionality
     }
     public func uploadReviewList(){
         //init you own list from page tamplate
@@ -96,6 +103,9 @@ public class BusinessPage{
     }
     public func uploadListOfPartners(){
         //PartnersList.setPartners = self.curentCompany.partners  //example
+    }
+    private func openEditPage(){
+        //open new window - 
     }
     private func viewThisPartner(_id:Int){
         //openNewPage(BusinessPage(_id))

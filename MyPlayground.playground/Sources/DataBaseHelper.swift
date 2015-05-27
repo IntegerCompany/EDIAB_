@@ -68,4 +68,13 @@ public class DataBaseHelper{
         //getting all reviews by id
         return allReview
     }
+    public func saveThisCompany(company:Company){
+        //saving new company
+
+    }
+    public func updateThisCompany(company:Company){
+        company.getID()
+        //update this company by id
+        
+    }
 }
