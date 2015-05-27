@@ -6,6 +6,8 @@ public class Post{
     var date:String! //for example string , but we neet to change it to normal date format
     var tag:[String]! //some tag const.
     var name:String!
+    
+    public func getID()->Int{return 1} //example
 }
 
 public class EventPost:Post{
@@ -51,8 +53,11 @@ public class ProductPost:Post{
     public var description:String!
 }
 public class VacancyPost:Post{
+    public override init(){
+        super.init()
+    }
     var category:String!
-    var salary:Int!
+    var salary:Float!
     var education:String!
     var typeOfEmployment:String! // full time/ part time / can be boolean type - t/f
     var experienceOfWork:String! // may generate one more field with int value -"years" (for example)
@@ -65,12 +70,15 @@ public class VacancyPost:Post{
     var districtOfCity:String! //(optional)
     var image:Img!
     var file:Int! // resume .doc
+    var company:Int! // optionaly if vacancy connected to some busieness
     
 }
 public class ResumePost:Post{
-    
+    public override init(){
+        super.init()
+    }
     var category:String!
-    var salary:Int!
+    var salary:Float!
     var education:String!
     var typeOfEmployment:String! // full time/ part time / can be boolean type - t/f
     var experienceOfWork:String! // may generate one more field with int value -"years" (for example)
@@ -81,7 +89,8 @@ public class ResumePost:Post{
     //var tag:[String]! //some tag const.
     var status:Bool! //open/close
     var districtOfCity:String!
-    var company:Int! // optionaly if vacancy connected to some busieness
+    var image:Img!
+    var file:Int! // resume .doc
     
 }
 public class RealEstatePost:Post{

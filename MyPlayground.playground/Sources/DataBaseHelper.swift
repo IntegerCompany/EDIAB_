@@ -4,10 +4,17 @@ public class DataBase{
     //some data base
     public init(){}
     
+    public func getRowById(_id:Int)->Post{
+        //example class that simulate db requst
+        return Post()
+    }
     //connecting with db and all other functionality
 }
 
 public class DataBaseHelper{
+    
+    public init(){}
+    
     public var db:DataBase = DataBase()
     
     public func getAllPosts()->[Post]{
@@ -51,5 +58,14 @@ public class DataBaseHelper{
         //deleting proccess...
         //update comments list
     }
-    
+    public func getCurrentCompanyById(_id:Int)->Company{
+        var company:Company = db.getRowById(_id) as! Company
+        return company
+    }
+    public func getReviewsById(_id:Int)->[Review]{
+        var allReview = [Review]()
+        //same algorithm as getAllPosts()
+        //getting all reviews by id
+        return allReview
+    }
 }

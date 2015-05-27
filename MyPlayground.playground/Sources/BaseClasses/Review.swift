@@ -1,9 +1,8 @@
 import Foundation
 
-public class Review{
+public class Review : Post{
     
     var userId:Int!
-    var date:Int!
     var userName:String!
     var photo:Img!
     var description:String!

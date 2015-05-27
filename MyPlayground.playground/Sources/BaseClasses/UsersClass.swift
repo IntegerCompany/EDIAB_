@@ -14,7 +14,8 @@ public protocol getAbstractProperty {
 }
 public class UserBase:getAbstractProperty{
     
-    var firstName:String
+    var _id:Int!
+    var firstName:String!
     var lastName:String!
     var email:String!
     var age:Int!
@@ -30,6 +31,9 @@ public class UserBase:getAbstractProperty{
     
     public func getAllPosts() -> [Int] {
         return [1,2]
+    }
+    public func getId() -> Int {
+        return 3
     }
 }
 

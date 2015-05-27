@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8B95959C-1921-42F9-A4A1-96C55CED3A5A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyPlayground</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5FB2E33C04A1BE8DD815F6F63A1660488E373646</key>
+		<string>https://github.com/MaxVitruk/EDIAB_</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyPlayground.playground</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5FB2E33C04A1BE8DD815F6F63A1660488E373646</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MaxVitruk/EDIAB_</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5FB2E33C04A1BE8DD815F6F63A1660488E373646</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5FB2E33C04A1BE8DD815F6F63A1660488E373646</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EDIAB</string>
+		</dict>
+	</array>
+</dict>
+</plist>
