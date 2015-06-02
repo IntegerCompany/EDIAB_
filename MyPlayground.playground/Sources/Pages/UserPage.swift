@@ -1,6 +1,14 @@
 import Foundation
 
 public class UserProfilePage{
+    //types of actions
+    let SHOW_ALL_POSTS = 1
+    let SHOW_EVENTS = 2
+    let SHOW_REAL_ESTATES = 3
+    
+    var reviewListAdapter:PostAdapter!
+    
+    // and other action from post list
     
     var db = DataBaseHelper()
     var allPosts:[Post]!
@@ -13,6 +21,22 @@ public class UserProfilePage{
         loadUserInfo()
         
     }
+    //use your onItemListClickListener
+    private func onListItemList(event:Int){
+        //an example of simple onClick logic
+        switch(event){
+            
+        case SHOW_ALL_POSTS:
+            performUserPostList()
+            break
+        case SHOW_EVENTS:
+            showAllEventList()
+            break
+        default:
+            break
+        }
+    }
+    
     private func loadUserInfo(){
         //perform user photo
         //perform user name and loacation
@@ -27,52 +51,28 @@ public class UserProfilePage{
         eventPosts = db.getEventPosts()
         var eventPostCounter = eventPosts.count
         
+        //init you own list from page tamplate
+        var list:PostList = PostList()
+        
+        self.reviewListAdapter = PostAdapter(list: list, posts: allPosts)
+        //perform review list
+        self.reviewListAdapter.buildListView()
+        
         //and so on ... 
         //clone same login into other posts!
     }
     
-    //use your onItemListClickListener
-    private func onListItemList(item:Int){
-        //an example of simple onClick logic
-        switch(item){
-        case 1:
-            showAllPostList()
-            break
-        case 2:
-            showAllEventList()
-            break
-        default:
-            showAllPostList()
-            break
-        }
-    }
-    //This method show all posts list
-    private func showAllPostList(){
-        
-        for post in allPosts {
-            if(post is EventPost){
-                //use eventPostTemplate.
-                //set date from this post to currnet views elements
-                //add elemet to list view
-            }
-            else if(post is ProductPost){
-                //use productPostTemplate.
-                //set date from this post to currnet views elements
-                //add elemet to list view
-            }else{
-                //compare and show into list view
-            }
-        }
-    }
     private func showAllEventList(){
         
-        for post in eventPosts{
-            //use eventPostTemplate.
-            //set date from this post to currnet views elements
-            //add elemet to list view
-        }
+        allPosts = db.getEventPosts()
+        
+        var list:PostList = PostList()
+        
+        self.reviewListAdapter = PostAdapter(list: list, posts: allPosts)
+        //perform review list
+        self.reviewListAdapter.buildListView()
     }
     /*
     * ... modify next show method depending on the goals
     */
-    }
+}

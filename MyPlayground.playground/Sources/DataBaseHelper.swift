@@ -62,11 +62,11 @@ public class DataBaseHelper{
         var company:Company = db.getRowById(_id) as! Company
         return company
     }
-    public func getReviewsById(_id:Int)->[Review]{
-        var allReview = [Review]()
+    public func getCommentsById(_id:Int)->[Comment]{
+        var allComments = [Comment]()
         //same algorithm as getAllPosts()
         //getting all reviews by id
-        return allReview
+        return allComments
     }
     public func saveThisCompany(company:Company){
         //saving new company
@@ -76,5 +76,15 @@ public class DataBaseHelper{
         company.getID()
         //update this company by id
         
+    }
+    public func getThisUserByID(_id:Int!)->User{
+        var user:User = User()
+        return user
+    }
+    public func getAllRealEstatesByFilter(filter:[String]!)->[Post]{
+        return [Post]()
+    }
+    public func getAllVacancysByFilter(filter:[String]!)->[Post]{
+        return [Post]()
     }
 }

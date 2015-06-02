@@ -1,11 +1,16 @@
 import Foundation
 
+/*
+    This class may be performed like dialog window
+*/
 public class CommentTemplate{
     var bizPage:BusinessPage!
     
     public init(bizPage:BusinessPage){
         self.bizPage = bizPage
     }
+    
+    //@See reviewListAdapter()
     //action from this teplate. succes button
     private func onCommitAndPushButtonPress(){
         var comment:Comment = Comment()

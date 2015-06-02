@@ -86,7 +86,7 @@ public class BusinessPage{
         //init you own list from page tamplate
         var list:PostList = PostList()
 
-        self.reviewListAdapter = PostAdapter(list: list, posts: self.curentCompany.reviews)
+        self.reviewListAdapter = PostAdapter(list: list, posts: self.curentCompany.comments)
         //perform review list
         self.reviewListAdapter.buildListView()
     }

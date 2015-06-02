@@ -2,41 +2,59 @@ import Foundation
 
 
 public class Post{
-    
+    var _id:Int!
     var date:String! //for example string , but we neet to change it to normal date format
     var tag:[String]! //some tag const.
     var name:String!
+    var userID:Int = 1 // = 1 - example
+    var userTypeID:Int = 2 // = 2 - example
     
-    public func getID()->Int{return 1} //example
+    public func getID()->Int{
+        return self.userID
+    }
+    public func getType()->Int{
+        return self.userTypeID
+    }
+    public func getPhotos()->[Img]{
+        preconditionFailure("This method must be overridden")
+        return [Img]()
+    }
+    public func getVideos()->[Img]{
+        preconditionFailure("This method must be overridden")
+        return [Img]()
+    }
+    public func getFiles()->[Img]{
+        preconditionFailure("This method must be overridden")
+        return [Img]()
+    }
+    public func getCompany()->Company{
+        preconditionFailure("This method must be overridden")
+        return Company()
+    }
 }
 
 public class EventPost:Post{
     
     public override init(){
         super.init()
-        
-        var description:String!
-        var company:[Company]!
-        var photos:[Img]!
-        var videos:[String]!
-        
     }
-    public var description:String!
+    var description:String!
+    var company:[Company]!
+    var photos:[Img]!
+    var videos:[String]!
     
 }
 public class StoryPost:Post{
     public override init(){
         super.init()
-        
-        var descriptionShort:String!
-        var descriptionLong:String!
-        var photos:[Img]!
-        var videos:[String]!
-        var companyId:Int!
-        
-        //generate new fields
     }
+    var descriptionShort:String!
+    var descriptionLong:String!
+    var photos:[Img]!
+    var videos:[String]!
+    var companyId:Int!
     
+    //generate new fields
 }
 public class ProductPost:Post{
     

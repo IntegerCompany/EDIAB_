@@ -19,8 +19,11 @@ public class UserBase:getAbstractProperty{
     var lastName:String!
     var email:String!
     var age:Int!
-    var sex:Bool
+    var sex:Bool!
     
+    public init(){
+        //
+    }
     public init(firstName:String,lastName:String,email:String,age:Int,sex:Bool){
         self.age = age
         self.lastName = lastName
@@ -38,11 +41,12 @@ public class UserBase:getAbstractProperty{
 }
 
 public class RegisteredUser : UserBase {
+    
     var city:String!
     var phone:Int!
     var neighbors:[String]!
     var location:String!
-    var image:String!
+    var image:Img!
     
 }
 public class User : RegisteredUser{
