@@ -279,7 +279,7 @@ Optional поза межами умови. Якщо ж ми використов
 Використовуючи if let.
 func originalStyleLongComplimentAboutBook(book: Book) { 
     if let bookName = book.name {
-        print("The \(bookName) is a great book!”)
+        print("The \(bookName) is a great book!")
         if let bookAuthor = book.Author {
             print("It is written by \(bookAuthor).")
             if let bookURL = book.URL {
@@ -298,7 +298,7 @@ guard let bookName = book.name else {
         print("I don't know the name of this book, but it's a good one!")
         return 
     } 
-    print("The \(bookName) is a great book!”)
+    print("The \(bookName) is a great book!")
     guard let bookAuthor = book.Author else {
         print("it is written by an unknown author.")
         return
@@ -321,7 +321,7 @@ func compoundGuardStyleLongComplimentAboutBook(book: Book) {
         	this book is great!")
         	return
         } 
-    print("The \(bookName) is a great book!”)
+    print("The \(bookName) is a great book!")
     print("It is written by \(bookAuthor).")
     print("")
     print("Visit it at \(bookURL)")
