@@ -258,17 +258,17 @@ struct Book {
     let Author: String?
 } 
 Для простого прикладу, дістанемо значення name та виведемо його на консоль. 
-Використовуючи if let. func originalStyleComplimentAboutBook(book: Book) { 
+Використовуючи if let.
+func originalStyleComplimentAboutBook(book: Book) { 
     if let bookName = book {
         print("The \(bookName) is a great book!")
     } else {
-        print("I don't know the name of this book, but it's a
-good one!") } 
+        print("I don't know the name of this book, but it's a good one!") } 
 } 
-Використовуючи guard. func guardStyleComplimentAboutBook(book: Book) { 
+Використовуючи guard. 
+func guardStyleComplimentAboutBook(book: Book) { 
     guard let bookName = book.name else {
-          print("I don't know the name of this book, but it's
-a good one!")
+        print("I don't know the name of this book, but it's a good one!")
         return
     }
    print("The \(bookName) is a great book!")
@@ -276,7 +276,8 @@ a good one!")
 Можна помітити дещо дивне, ми використовуємо константу якій присвоєно 
 Optional поза межами умови. Якщо ж ми використовуємо if let то можемо це робити лише всередині блоку, якщо умова виконалася. Для guard випадок true це решта частина коду. Але важливо пам’ятати, що в разі помилки потрібно після виконання дій вийти з функції за допомогою return. 
 Для цього короткого прикладу дійсно не важливо що використовувати. Але коли кількість умов збільшується, доцільніше використовувати guard. 
-Використовуючи if let. func originalStyleLongComplimentAboutBook(book: Book) { 
+Використовуючи if let.
+func originalStyleLongComplimentAboutBook(book: Book) { 
     if let bookName = book.name {
         print("The \(bookName) is a great book!”)
         if let bookAuthor = book.Author {
@@ -284,46 +285,48 @@ Optional поза межами умови. Якщо ж ми використов
             if let bookURL = book.URL {
                 print("Visit it at \(bookURL)")
             } else {
-                print("Search for it on your favourite search
-engine.") } 
+                print("Search for it on your favourite search engine.") } 
         } else {
             print("it is written by an unknown author.")
-} } else { 
-        print("I don't know the name of this book, but it's a
-good one!")
-} } 
-Використовуючи guard. guard let bookName = book.name else { 
-        print("I don't know the name of this book, but it's a
-good one!")
-return } 
+	}
+    } else { 
+        print("I don't know the name of this book, but it's a good one!")
+    } 
+} 
+Використовуючи guard. 
+guard let bookName = book.name else { 
+        print("I don't know the name of this book, but it's a good one!")
+        return 
+    } 
     print("The \(bookName) is a great book!”)
     guard let bookAuthor = book.Author else {
         print("it is written by an unknown author.")
         return
     }
     print("It is written by \(bookAuthor).")
-guard let bookURL = book.URL else {
-        print("Search for it on your favourite search
-engine.")
+    guard let bookURL = book.URL else {
+        print("Search for it on your favourite search engine.")
         return
-} 
+    } 
     print("Visit it at \(bookURL)")
 }
 Перш за все, що можна помітити це відсутність вкладених блоків коду. Це робить код більш читабельним та зрозумілим. Хоча це не зменшує саму кількість коду, це дозволяє швидше та зручніше оперувати ним. Не складає проблем знайти який код у випадку true відповідає певній перевірці. 
 Якщо нам не важлива перевірка окремих значень, їх можна об’єднати. 
+
 func compoundGuardStyleLongComplimentAboutBook(book: Book) {
     guard let bookName = book.name,
-          let bookURL = book.URL,
-          let bookAuthor = book.Author else {
-            print("My information is incomplete, but I'm sure
-this book is great!")
-            return
-} 
+        let bookURL = book.URL,
+        let bookAuthor = book.Author else {
+        	print("My information is incomplete, but I'm sure
+        	this book is great!")
+        	return
+        } 
     print("The \(bookName) is a great book!”)
     print("It is written by \(bookAuthor).")
     print("")
     print("Visit it at \(bookURL)")
 } 
+
 Важливим для guard є вихід з тіла функції або циклу. Тобто для функції ми повинні використовувати return, а в циклах break або continue. Break завершить виконання циклу, continue перейде до наступної ітерації, залишившись при тому в циклі. 
 For… in фільтрування
 
