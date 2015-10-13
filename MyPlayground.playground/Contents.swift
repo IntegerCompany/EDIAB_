@@ -393,7 +393,7 @@ case let (.Some(username), .None):
 case let (.None, .Some(password)):
     print("Username is missing")
 case (.None, .None):
-    print("Both username and password are missing”)
+    print("Both username and password are missing")
 }
 З оновленням це можна зробити набагато красивіше
 
