@@ -395,7 +395,7 @@ case let (.None, .Some(password)):
 case (.None, .None):
     print("Both username and password are missing”)
 
-З оновленням це можна зробити набагато красивіше:
+З оновленням це можна зробити набагато красивіше
 
 var username: String?
 var password: String?
